@@ -10,7 +10,6 @@ import com.ab.soap.AbSoapListener;
 import com.ab.soap.AbSoapParams;
 import com.ab.soap.AbSoapUtil;
 import com.ab.util.AbDialogUtil;
-import com.ab.util.AbLogUtil;
 import com.ab.util.AbStrUtil;
 import com.ab.util.AbToastUtil;
 import com.bigkoo.alertview.AlertView;
@@ -94,8 +93,8 @@ public class WebServiceUntils2 {
 
 
     private void call(final Context context, final String methodName, final AbSoapParams params,  final AbDialogFragment mDialogFragment, final webServiceCallBack webServiceCallBack) {
-        AbLogUtil.d("tttt-方法-" + methodName, methodName);
-        AbLogUtil.d("tttt-参数-"+methodName,params.toString());
+//        AbLogUtil.d("tttt-方法-" + methodName, methodName);
+//        AbLogUtil.d("tttt-参数-"+methodName,params.toString());
         // 一个url地址
         String urlString = Constant.SOAPURL;
         String nameSpace = Constant.SOAPNSP;
@@ -110,7 +109,7 @@ public class WebServiceUntils2 {
                 count = 0;
                 mDialogFragment.loadFinish();
                 String rtn = object.getProperty(0).toString().trim();
-                AbLogUtil.d("tttt-返回值-"+methodName,rtn);
+//                AbLogUtil.d("tttt-返回值-"+methodName,rtn);
 
                 if (AbStrUtil.isEquals(rtn, Constant.VERSION_ERROR)) {
                     new AlertView("提示", "请升级为最新版本", null, new String[]{"确定"}, null, context, AlertView.Style.Alert, new OnItemClickListener() {

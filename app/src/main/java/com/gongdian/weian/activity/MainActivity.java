@@ -60,7 +60,7 @@ public class MainActivity extends AbActivity {
     BaiduMapFragment page2 = null;
     FragmentProfile page4 = null;
     FragmentMenu page3 = null;
-
+    FragmentWeb page1 = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +91,7 @@ public class MainActivity extends AbActivity {
         mBottomTabView.getViewPager().setEnabled(false);
         mAbTitleBar.setVisibility(View.GONE);
 
-        FragmentWeb page1 = new FragmentWeb();
+        page1 = new FragmentWeb();
         page2 = new BaiduMapFragment();
         page3 = new FragmentMenu();
         page4 = new FragmentProfile();
@@ -273,8 +273,8 @@ public class MainActivity extends AbActivity {
                         final AppBean appBean = getAppBeanFromString(result);
 
                         new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("更新")
-                                .setMessage("")
+                                .setTitle("应用更新")
+                                .setMessage("请更新至最新版本")
                                 .setNegativeButton(
                                         "确定",
                                         new DialogInterface.OnClickListener() {

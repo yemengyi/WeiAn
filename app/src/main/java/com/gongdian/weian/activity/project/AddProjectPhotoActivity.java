@@ -160,7 +160,7 @@ public class AddProjectPhotoActivity extends AbActivity {
             case Constant.MENU5: //开工
                 flag = Constant.FLAG3;
                 addBtn.setText("工作许可");
-                mView_task.setText("开工");
+                mView_task.setText("许可");
                 break;
             case Constant.MENU6: //到岗
                 flag = Constant.FLAG5;
@@ -176,7 +176,7 @@ public class AddProjectPhotoActivity extends AbActivity {
             case Constant.MENU8: //完工
                 flag = Constant.FLAG4;
                 addBtn.setText("工作终结");
-                mView_task.setText("完工");
+                mView_task.setText("终结");
                 break;
         }
         String info = project_temp.getId() + " " + project_temp.getMc() + "\n" + "施工部门: " + project_temp.getDw() + "\n" + "施工地址: " + project_temp.getDz();

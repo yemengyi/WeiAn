@@ -6,7 +6,6 @@ import com.ab.soap.AbSoapListener;
 import com.ab.soap.AbSoapParams;
 import com.ab.soap.AbSoapUtil;
 import com.ab.util.AbDialogUtil;
-import com.ab.util.AbLogUtil;
 import com.ab.util.AbStrUtil;
 import com.ab.util.AbToastUtil;
 import com.bigkoo.alertview.AlertView;
@@ -26,8 +25,8 @@ public class WebServiceUntils {
                           final Boolean isShowProgress, final String progressText, final webServiceCallBack webServiceCallBack) {
 
         params.put("token", MyApplication.getInstance().getToken());
-        AbLogUtil.d("tttt-方法-" + methodName,methodName);
-        AbLogUtil.d("tttt-参数-"+methodName,params.toString());
+//        AbLogUtil.d("tttt-方法-" + methodName,methodName);
+//        AbLogUtil.d("tttt-参数-"+methodName,params.toString());
 
 
         // 一个url地址
@@ -44,7 +43,7 @@ public class WebServiceUntils {
                 AbDialogUtil.removeDialog(context);
                 String rtn = object.getProperty(0).toString().trim();
 
-                AbLogUtil.d("tttt-返回值-"+methodName,rtn);
+//                AbLogUtil.d("tttt-返回值-"+methodName,rtn);
 
                 if (AbStrUtil.isEquals(rtn, Constant.VERSION_ERROR)) {
                     new AlertView("提示", "请升级为最新版本", null, new String[]{"确定"}, null, context, AlertView.Style.Alert, new OnItemClickListener() {

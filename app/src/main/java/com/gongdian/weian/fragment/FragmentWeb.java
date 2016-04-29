@@ -44,12 +44,12 @@ public class FragmentWeb extends Fragment {
                 super.onProgressChanged(view, newProgress);
             }
         });
-        webView.setWebViewClient(new WebViewClient() {
 
+
+        webView.setWebViewClient(new WebViewClient() {
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 AbLogUtil.d("xxxx", "webview error" + description);
             }
-
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 if (url.endsWith(".mp4")) {
