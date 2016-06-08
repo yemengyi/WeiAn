@@ -3,157 +3,171 @@
 
     <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/support-v13/23.3.0/jars/libs/internal_impl-23.3.0.jar"
-        jumboMode="true"
+        jumboMode="false"
         revision="23.0.3"
         sha1="8813bdcf7583107c4873150075d17c8072ec50cf">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0_15ee5ed8bef59ef7225012fd9ee9563872c35e13.jar" />
     </item>
     <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
-        jumboMode="true"
+        jumboMode="false"
         revision="23.0.3"
         sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0_9078cd00663ffb06b1413aa677d78d81f2296d46.jar" />
     </item>
     <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/AndBase/unspecified/jars/libs/ksoap2-android-assembly-2.6.5-jar-with-dependencies.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="621aea4984d297c188be02712b4cba17df66d26e">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/ksoap2-android-assembly-2.6.5-jar-with-dependencies_32ce477f4f49ced7db166c03bf0fd67a173d09c7.jar" />
-    </item>
-    <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/support-v13/23.3.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="a809555a2599054c3dcd1bf82b089315ac3a11df">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-support-v13-23.3.0_858271be65104f5c4abce50f899b1022c26787aa.jar" />
-    </item>
-    <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/pgyer_sdk_2.2.2.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="9d257f78eb7f532da7850ccaf1b14555221ab8b0">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/pgyer_sdk_2.2.2_7c0e78b48514a5d2294d91ac9280e1ba76f74d74.jar" />
-    </item>
-    <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.3.0_f9cc0490a0d384941678a07bd48e95a1c072fd0f.jar" />
-    </item>
-    <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/baidumapapi_radar_v3_6_1.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="1798aaeab5d68706f7e5be9399590f1b41df5053">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/baidumapapi_radar_v3_6_1_af8dfc7efeab94f8f225d41c6dc67e0f365c0ff8.jar" />
-    </item>
-    <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.3.0_bcc56ff9248f32f89b1ac86d8e4637f753294857.jar" />
-    </item>
-    <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="a7bb4691fabfcfc2f9561e6842329bf55e83239b">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/instant-run_8ed7108692a52ae2e2ab93bd6462d40664ec808c.jar" />
-    </item>
-    <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         revision="23.0.3"
         sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.3.0_5e16a5608fdb1337cc220b2cea8144ad0dfdc439.jar" />
     </item>
     <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/library.jar"
-        jumboMode="true"
+        jar="/Users/qian-pc/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="false"
         revision="23.0.3"
-        sha1="46478fdc5b85f7457767d5786149008353238bbd">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/library_edf7005250bfa4f75cc53aa8592987146c94201e.jar" />
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0_d15ed21c26e43c04011cec70143100a4c110a767.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.3.0_f9cc0490a0d384941678a07bd48e95a1c072fd0f.jar" />
     </item>
     <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/baidumapapi_map_v3_6_1.jar"
-        jumboMode="true"
+        jumboMode="false"
         revision="23.0.3"
         sha1="23ebff6260f4903de73a88f877f7c32025205c53">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/baidumapapi_map_v3_6_1_5db3f687200ebe3d9e60cd7fb9f9b1f5b4fadb58.jar" />
     </item>
     <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/baidumapapi_cloud_v3_6_1.jar"
-        jumboMode="true"
+        jumboMode="false"
         revision="23.0.3"
         sha1="387e4f255e65a144c164e3c67a794e9ad2445c2d">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/baidumapapi_cloud_v3_6_1_62cf27de18f9022ebdce99f5e801732066ada668.jar" />
     </item>
     <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.3.0_536b61102c27ed1a511044bd3fd2b41fee299d6b.jar" />
-    </item>
-    <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="df42532e96f8c9c49beaa26c3e11f0f7e596cf5d">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_75cb4de6055642201ce5a9161860bff1d404b915.jar" />
-    </item>
-    <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/baidumapapi_base_v3_6_1.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="683a7fe2d903826fc8ff46832b0be142d4b6576d">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/baidumapapi_base_v3_6_1_6ca9938ce340ca34f2f75730d0e7f40ea31d2225.jar" />
-    </item>
-    <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/baidumapapi_util_v3_6_1.jar"
-        jumboMode="true"
+        jumboMode="false"
         revision="23.0.3"
         sha1="0f0b934deaefab0513860d85cd1f4bcd83fc1003">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/baidumapapi_util_v3_6_1_9cc6d93601ce848dec7410e4ce40906335adc94f.jar" />
     </item>
     <item
-        jar="/Users/qian-pc/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
-        jumboMode="true"
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/baidumapapi_base_v3_6_1.jar"
+        jumboMode="false"
         revision="23.0.3"
-        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0_d15ed21c26e43c04011cec70143100a4c110a767.jar" />
+        sha1="683a7fe2d903826fc8ff46832b0be142d4b6576d">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/baidumapapi_base_v3_6_1_6ca9938ce340ca34f2f75730d0e7f40ea31d2225.jar" />
     </item>
     <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/baidumapapi_search_v3_6_1.jar"
-        jumboMode="true"
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
         revision="23.0.3"
-        sha1="ae35daa343eece79419b1491c64ffe84c3707c50">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/baidumapapi_search_v3_6_1_eec6c7cad4dd1e89d7a18e0db6b49849d7e98ef8.jar" />
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.3.0_87ad430fac751c7cfa546fea3dc34e60f56024ec.jar" />
     </item>
     <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/locSDK_6.13.jar"
-        jumboMode="true"
+        jumboMode="false"
         revision="23.0.3"
         sha1="89074d1026c4938136ae6922ac9e7b0130dc27d4">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/locSDK_6.13_14d5beee160406815d07ade83ef2e8f97e4315e5.jar" />
     </item>
     <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/support-v13/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a809555a2599054c3dcd1bf82b089315ac3a11df">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-support-v13-23.3.0_858271be65104f5c4abce50f899b1022c26787aa.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/roundedimageview/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="9e680e55b337e7cda8ac2361afb35d9127b9a108">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/WeiAn-roundedimageview-unspecified_4a26fb049cf452d51f2cf718a4c6e72811bf179c.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/pgyer_sdk_2.2.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="9d257f78eb7f532da7850ccaf1b14555221ab8b0">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/pgyer_sdk_2.2.2_7c0e78b48514a5d2294d91ac9280e1ba76f74d74.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/AndBase/unspecified/jars/libs/ksoap2-android-assembly-2.6.5-jar-with-dependencies.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="6f6bbe8622a97b5337103302b76940c7fc54e996">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/ksoap2-android-assembly-2.6.5-jar-with-dependencies_32ce477f4f49ced7db166c03bf0fd67a173d09c7.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/baidumapapi_radar_v3_6_1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="1798aaeab5d68706f7e5be9399590f1b41df5053">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/baidumapapi_radar_v3_6_1_af8dfc7efeab94f8f225d41c6dc67e0f365c0ff8.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.3.0_bcc56ff9248f32f89b1ac86d8e4637f753294857.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/library.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="46478fdc5b85f7457767d5786149008353238bbd">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/library_edf7005250bfa4f75cc53aa8592987146c94201e.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/AppMsg/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="226e03daaecd70591d428f0462d464a7f2052552">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/WeiAn-AppMsg-unspecified_7a62321fbb2ff5661d213f24e27e469ea22ba65a.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.3.0_536b61102c27ed1a511044bd3fd2b41fee299d6b.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.bigkoo/alertview/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="6b22c7854d6f2b1dbaba49b61aeead46217ceb6a">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.bigkoo-alertview-1.0.1_a1ec973afd82c730ba334b1da85973ec3dd09810.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/AndBase/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="6447e61259cc8206e62df27e2aa2997d3aafe8e1">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/WeiAn-AndBase-unspecified_ef688c765b00fa3bfd5a444283831853e192984b.jar" />
+    </item>
+    <item
+        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/libs/baidumapapi_search_v3_6_1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ae35daa343eece79419b1491c64ffe84c3707c50">
+        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/baidumapapi_search_v3_6_1_eec6c7cad4dd1e89d7a18e0db6b49849d7e98ef8.jar" />
+    </item>
+    <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         revision="23.0.3"
         sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.3.0_12fe15350d3f9ddaad483a0b6424e25c249d5a5f.jar" />
-    </item>
-    <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="debf30ce0a7560396b6235edef77e447006454c2">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.3.0_87ad430fac751c7cfa546fea3dc34e60f56024ec.jar" />
     </item>
 
 </items>
