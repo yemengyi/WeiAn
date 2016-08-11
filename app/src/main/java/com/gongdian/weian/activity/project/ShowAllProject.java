@@ -49,11 +49,12 @@ public class ShowAllProject extends AbActivity implements
     private MyApplication application;
     private int currentPage = 1;
     private MyexpandableListAdapter adapter;
-    private int pageSize = 50;
+    private int pageSize = 10;
     private ArrayList<Project2> groupList = null;
     private ArrayList<List<Project_dw2>> childList = null;
     AlertView mAlertViewExt;//窗口拓展例子
     List<Dxtz> mDxtzList = new ArrayList<>();
+    private String rq;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,7 @@ public class ShowAllProject extends AbActivity implements
         });
 
         groupList = new ArrayList<>();
+        rq = getIntent().getStringExtra("rq");
 
         List<Project_dw2> project_dw2s = new ArrayList<>();
         childList = new ArrayList<>();
@@ -113,9 +115,8 @@ public class ShowAllProject extends AbActivity implements
         currentPage = 1;
         AbSoapParams params = new AbSoapParams();
         params.put("user_id", application.getUsers().getId());
-        params.put("rowstart", "0");
-        params.put("rowend", String.valueOf(currentPage * pageSize));
-        WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(ShowAllProject.this, Constant.GetProject_all, params);
+        params.put("rq", rq);
+        WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(ShowAllProject.this, Constant.GetProject_all_new, params);
         webServiceUntils2.start(new WebServiceUntils2.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {

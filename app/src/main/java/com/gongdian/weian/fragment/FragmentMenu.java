@@ -26,8 +26,8 @@ import com.gongdian.weian.R;
 import com.gongdian.weian.activity.RegisterActivity;
 import com.gongdian.weian.activity.admin.DepartmentActivity;
 import com.gongdian.weian.activity.admin.UsersActivity;
-import com.gongdian.weian.activity.project.ShowAllProject;
 import com.gongdian.weian.activity.project.ShowProjectByMenuActivity;
+import com.gongdian.weian.activity.project.ShowRqActivity;
 import com.gongdian.weian.adapter.MenuListAdapter;
 import com.gongdian.weian.model.Menu;
 import com.gongdian.weian.model.MenuListResult;
@@ -138,7 +138,7 @@ public class FragmentMenu extends Fragment {
                         mActivity.startActivityForResult(intent,Constant.ModifyProjectResultCode);
                         break;
                     case Constant.MENU9: //一览
-                        intent.setClass(mActivity, ShowAllProject.class);
+                        intent.setClass(mActivity, ShowRqActivity.class);
                         mActivity.startActivityForResult(intent, Constant.ModifyProjectResultCode);
                         break;
                     default:

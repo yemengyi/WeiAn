@@ -58,6 +58,8 @@ public class TestActivity extends AbActivity implements ActivityCompat.OnRequest
         startActivityForResult(intent, GALLERY_REQUEST_CODE);
     }
 
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

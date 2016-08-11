@@ -103,6 +103,8 @@ public class Constant {
     public final static String GetProject = "get_project_json";
     public final static String GetProject_menu = "get_project_menu_json";
     public final static String GetProject_all = "get_project_all_json";
+    public final static String GetProject_all_new = "get_project_all_new_json";
+    public final static String GetProject_all_rq = "get_project_all_rq_json";
     public final static String GetProject_sp_num = "get_sp_number";
     public final static String GetProject_sp = "get_project_sp_json";
     public final static String Commit_sp = "uf_commit_sp";
