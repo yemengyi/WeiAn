@@ -97,15 +97,6 @@ public class MyApplication extends Application {
         super.onTerminate();
     }
 
-
-    public com.gongdian.weian.model.Users getUsers() {
-        return Users;
-    }
-
-    public void setUsers(com.gongdian.weian.model.Users users) {
-        Users = users;
-    }
-
     public String getSms() {
         return sms;
     }
@@ -178,13 +169,7 @@ public class MyApplication extends Application {
         this.userChanged3 = userChanged3;
     }
 
-    public String getToken() {
-        return token;
-    }
 
-    public void setToken(String token) {
-        this.token = token;
-    }
 
     /**
      * map实现实时位置回调监听

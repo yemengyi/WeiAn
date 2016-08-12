@@ -24,7 +24,7 @@ public class WebServiceUntils {
     public static void call(final Context context, final String methodName, final AbSoapParams params, int timeout,
                           final Boolean isShowProgress, final String progressText, final webServiceCallBack webServiceCallBack) {
 
-        params.put("token", MyApplication.getInstance().getToken());
+        params.put("token",ShareUtil.getToken(context));
 //        AbLogUtil.d("tttt-方法-" + methodName,methodName);
 //        AbLogUtil.d("tttt-参数-"+methodName,params.toString());
 

@@ -24,6 +24,7 @@ import com.gongdian.weian.model.Project_dw;
 import com.gongdian.weian.model.Users;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils2;
 
 import java.io.Serializable;
@@ -46,7 +47,7 @@ public class MineProject extends AbActivity {
         setAbContentView(R.layout.activity_mine_project);
         application = (MyApplication) abApplication;
         application.setIsAddProject(false);
-        users = application.getUsers();
+        users = ShareUtil.getSharedUser(MineProject.this);
 
         mAbTitleBar = this.getTitleBar();
         mAbTitleBar.setTitleText("我的工程");
@@ -127,7 +128,7 @@ public class MineProject extends AbActivity {
      */
     public void refreshTask() {
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id", users.getId());
         WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(MineProject.this, Constant.GetProject_menu, params);
         webServiceUntils2.start(new WebServiceUntils2.webServiceCallBack() {
             @Override
@@ -155,7 +156,7 @@ public class MineProject extends AbActivity {
 
     public void loadMoreTask() {
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id", users.getId());
         WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(MineProject.this, Constant.GetProject_menu, params);
         webServiceUntils2.start(new WebServiceUntils2.webServiceCallBack() {
             @Override

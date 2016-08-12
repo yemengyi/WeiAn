@@ -1,6 +1,7 @@
 package com.gongdian.weian.activity.admin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
@@ -38,6 +39,7 @@ import com.gongdian.weian.model.UsersListResult;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MsgUtil;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 import com.gongdian.weian.utils.WebServiceUntils2;
 import com.pgyersdk.feedback.PgyFeedbackShakeManager;
@@ -76,7 +78,7 @@ public class DepartmentActivity extends AbActivity {
         super.onCreate(savedInstanceState);
         setAbContentView(R.layout.pull_to_refresh_list2);
         application = (MyApplication) abApplication;
-        users = application.getUsers();
+        users = ShareUtil.getSharedUser(DepartmentActivity.this);
         mabSoapUtil = AbSoapUtil.getInstance(this);
         mabSoapUtil.setTimeout(10000);
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -324,7 +326,7 @@ public class DepartmentActivity extends AbActivity {
         choose = -1;
 
         mAlertView = new AlertView("操作菜单", null, "取消", null,
-                new String[]{"部门负责人","修改部门名称", "删除部门信息"},
+                new String[]{"部门负责人","修改部门名称", "删除部门信息","修改人员信息"},
                 DepartmentActivity.this, AlertView.Style.ActionSheet, new OnItemClickListener() {
             @Override
             public void onItemClick(Object o, int position) {
@@ -351,6 +353,13 @@ public class DepartmentActivity extends AbActivity {
                                 }
                             }
                         }).show();
+                        break;
+                    case 3:
+                        Intent intent = new Intent();
+                        intent.putExtra("pid",department.getPid());
+                        intent.putExtra("pname",department.getPname());
+                        intent.setClass(DepartmentActivity.this,UsersActivity.class);
+                        startActivity(intent);
                         break;
                 }
 

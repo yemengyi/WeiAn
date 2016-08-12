@@ -28,11 +28,13 @@ import com.gongdian.weian.model.DxtzResult;
 import com.gongdian.weian.model.Project2;
 import com.gongdian.weian.model.ProjectListResult2;
 import com.gongdian.weian.model.Project_dw2;
+import com.gongdian.weian.model.Users;
 import com.gongdian.weian.others.PinnedHeaderExpandableListView;
 import com.gongdian.weian.others.StickyLayout;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MsgUtil;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 import com.gongdian.weian.utils.WebServiceUntils2;
 
@@ -55,12 +57,14 @@ public class ShowAllProject extends AbActivity implements
     AlertView mAlertViewExt;//窗口拓展例子
     List<Dxtz> mDxtzList = new ArrayList<>();
     private String rq;
+    private Users user;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setAbContentView(R.layout.activity_project_expand);
         application = (MyApplication) getApplication();
+        user = ShareUtil.getSharedUser(ShowAllProject.this);
         expandableListView = (PinnedHeaderExpandableListView) findViewById(R.id.expandablelist);
         stickyLayout = (StickyLayout) findViewById(R.id.sticky_layout);
 
@@ -114,7 +118,7 @@ public class ShowAllProject extends AbActivity implements
     public void refreshTask() {
         currentPage = 1;
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id", user.getId());
         params.put("rq", rq);
         WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(ShowAllProject.this, Constant.GetProject_all_new, params);
         webServiceUntils2.start(new WebServiceUntils2.webServiceCallBack() {
@@ -150,7 +154,7 @@ public class ShowAllProject extends AbActivity implements
     public void loadMoreTask() {
         currentPage++;
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id", user.getId());
         params.put("rowstart", String.valueOf(currentPage * (pageSize - 1)));
         params.put("rowend", String.valueOf(currentPage * pageSize));
         WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(ShowAllProject.this, Constant.GetProject_all, params);

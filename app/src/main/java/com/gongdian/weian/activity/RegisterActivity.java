@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -15,23 +14,22 @@ import android.widget.ImageButton;
 
 import com.ab.activity.AbActivity;
 import com.ab.soap.AbSoapParams;
-import com.ab.util.AbLogUtil;
 import com.ab.util.AbStrUtil;
 import com.ab.view.titlebar.AbTitleBar;
 import com.bigkoo.alertview.AlertView;
 import com.bigkoo.alertview.OnItemClickListener;
 import com.gongdian.weian.R;
 import com.gongdian.weian.model.Users;
-import com.gongdian.weian.others.IMSInfo;
-import com.gongdian.weian.others.PhoneInfo;
 import com.gongdian.weian.others.TimeButton;
 import com.gongdian.weian.parse.UsersPrase;
 import com.gongdian.weian.utils.Constant;
-import com.gongdian.weian.utils.ImsiUtil;
 import com.gongdian.weian.utils.MsgUtil;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 import com.pgyersdk.feedback.PgyFeedbackShakeManager;
+
+import java.util.List;
 
 
 public class RegisterActivity extends AbActivity implements View.OnClickListener {
@@ -155,18 +153,14 @@ public class RegisterActivity extends AbActivity implements View.OnClickListener
             }
         });
 
-        String deviceId = ((TelephonyManager)getSystemService(TELEPHONY_SERVICE)).getDeviceId();
-        AbLogUtil.e("xxxx", deviceId);
 
-        PhoneInfo siminfo = new PhoneInfo(this);
-        AbLogUtil.e("xxxx", siminfo.getNativePhoneNumber());
-        AbLogUtil.e("xxxx", siminfo.getProvidersName());
-        AbLogUtil.e("xxxx", siminfo.getPhoneInfo());
-
-        ImsiUtil imsiUtil = new ImsiUtil(this);
-        IMSInfo imsInfo = imsiUtil.getIMSInfo();
-        imsInfo.tolog();
-
+//        String deviceId = ((TelephonyManager)getSystemService(TELEPHONY_SERVICE)).getDeviceId();
+//
+//        PhoneInfo siminfo = new PhoneInfo(this);
+//
+//        ImsiUtil imsiUtil = new ImsiUtil(this);
+//        IMSInfo imsInfo = imsiUtil.getIMSInfo();
+//        imsInfo.tolog();
 
 
     }
@@ -286,12 +280,15 @@ public class RegisterActivity extends AbActivity implements View.OnClickListener
                     MsgUtil.sendMsgTop(RegisterActivity.this, Constant.MSG_ALERT, "登陆失败，请联系管理员!");
                     intent.setClass(RegisterActivity.this, MainActivity.class);
                 } else {
-                    Users users = UsersPrase.parser(result).get(0);
-                    MsgUtil.sendMsgTop(RegisterActivity.this, Constant.MSG_INFO, "欢迎您" + users.getUname());
-                    intent.setClass(RegisterActivity.this, MainActivity.class);
-                    application.setUsers(users);
-                    application.setIsLogin(true);
-                    application.setToken(android_id+Constant.APPVERSION);
+                    List<Users> userses = UsersPrase.parser(result);
+                    if (userses!=null&&userses.size()>0) {
+                        Users users = UsersPrase.parser(result).get(0);
+                        MsgUtil.sendMsgTop(RegisterActivity.this, Constant.MSG_INFO, "欢迎您" + users.getUname());
+                        intent.setClass(RegisterActivity.this, MainActivity.class);
+                        ShareUtil.setSharedUser(RegisterActivity.this,users);
+                        application.setIsLogin(true);
+                        ShareUtil.setToken(RegisterActivity.this,android_id+Constant.APPVERSION);
+                    }
                 }
                 startActivity(intent);
                 finish();

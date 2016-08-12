@@ -31,6 +31,7 @@ import com.gongdian.weian.utils.AppUtil;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MsgUtil;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 import com.gongdian.weian.utils.WebServiceUntils2;
 
@@ -64,7 +65,7 @@ public class ShowProjectByMenuActivity extends AbActivity {
         setAbContentView(R.layout.activity_show_project_by_menu);
         application = (MyApplication) abApplication;
         application.setIsAddProject(false);
-        users = application.getUsers();
+        users = ShareUtil.getSharedUser(ShowProjectByMenuActivity.this);
         Intent intent = this.getIntent();
         mCurrentMenu = (Menu) intent.getSerializableExtra("menu");
         if (!AbStrUtil.isEquals(mCurrentMenu.getMenu(), Constant.MENU3)) {
@@ -139,7 +140,7 @@ public class ShowProjectByMenuActivity extends AbActivity {
     public void refreshTask() {
         currentPage = 1;
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id", users.getId());
         params.put("menu_id", mCurrentMenu.getId());
         params.put("rowstart", "0");
         params.put("rowend", String.valueOf(currentPage * pageSize));
@@ -156,7 +157,7 @@ public class ShowProjectByMenuActivity extends AbActivity {
                         List<Project> projectList = projectListResult.getItems();
                         if (projectList != null && projectList.get(0).getId() != null) {
                             /**根据PID筛选重组工程*/
-                            ToListProject toListProject = new ToListProject(projectList, mCurrentMenu.getId(), application.getUsers().getPid());
+                            ToListProject toListProject = new ToListProject(projectList, mCurrentMenu.getId(), users.getPid());
                             List<Project> templist = toListProject.toList();
                             mList.addAll(templist);
                             myListViewAdapter.notifyDataSetChanged();
@@ -174,7 +175,7 @@ public class ShowProjectByMenuActivity extends AbActivity {
     public void loadMoreTask() {
         currentPage++;
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id", users.getId());
         params.put("menu_id", mCurrentMenu.getId());
         params.put("rowstart", String.valueOf(currentPage * (pageSize - 1)));
         params.put("rowend", String.valueOf(currentPage * pageSize));
@@ -190,7 +191,7 @@ public class ShowProjectByMenuActivity extends AbActivity {
                         List<Project> projectList = projectListResult.getItems();
                         if (projectList != null && projectList.get(0).getId() != null) {
                             /**根据PID筛选重组工程*/
-                            ToListProject toListProject = new ToListProject(projectList, mCurrentMenu.getId(), application.getUsers().getPid());
+                            ToListProject toListProject = new ToListProject(projectList, mCurrentMenu.getId(), users.getPid());
                             List<Project> templist = toListProject.toList();
                             mList.addAll(templist);
                             myListViewAdapter.notifyDataSetChanged();
@@ -267,7 +268,7 @@ public class ShowProjectByMenuActivity extends AbActivity {
         intent.putExtra("project", project);
         switch (mCurrentMenu.getMenu()) {
             case Constant.MENU3: //计划
-                if (AbStrUtil.isEquals(project.getCreateuser(), application.getUsers().getId())) {
+                if (AbStrUtil.isEquals(project.getCreateuser(), users.getId())) {
                     showDiag(project);
                 } else {
                     MsgUtil.sendMsgTop(ShowProjectByMenuActivity.this, Constant.MSG_ALERT, "创建人员不是当前登陆人员,不能操作");

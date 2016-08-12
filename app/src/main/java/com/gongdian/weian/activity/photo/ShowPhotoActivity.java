@@ -194,10 +194,12 @@ public class ShowPhotoActivity extends AbActivity {
 
     @Override
     public void onDestroy() {
+        // Need to call clean-up
+        if (mAttacher!=null) {
+            mAttacher.cleanup();
+        }
         super.onDestroy();
 
-        // Need to call clean-up
-        mAttacher.cleanup();
     }
 
     @Override

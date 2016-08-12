@@ -51,11 +51,13 @@ import com.gongdian.weian.dao.ProjectDao;
 import com.gongdian.weian.model.Project;
 import com.gongdian.weian.model.Project_jd;
 import com.gongdian.weian.model.Project_photo;
+import com.gongdian.weian.model.Users;
 import com.gongdian.weian.others.GrapeGridview;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MsgUtil;
 import com.gongdian.weian.utils.MyApplication;
 import com.gongdian.weian.utils.PictureUtil;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 
 import org.apache.http.protocol.HTTP;
@@ -126,14 +128,15 @@ public class AddProjectPhotoActivity extends AbActivity {
     private String pid = null;
     private Project project_temp;
     private Boolean isNewUpload = false;
-
     private int choose = -1;
+    private Users user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setAbContentView(R.layout.activity_exploration);
         application = (MyApplication) abApplication;
+        user = ShareUtil.getSharedUser(AddProjectPhotoActivity.this);
         mLocationClient = application.mLocationClient;
         LocationResult = (TextView) findViewById(R.id.textView1);
         LocationResult.setMovementMethod(ScrollingMovementMethod.getInstance());
@@ -219,7 +222,7 @@ public class AddProjectPhotoActivity extends AbActivity {
         mImagePathAdapter = new ImageShowAdapter(this, mPhotoList, (w - 100) / 3, (w - 100) / 3);
         mGridView.setAdapter(mImagePathAdapter);
 
-        mView_kcry.setText(application.getUsers().getUname());
+        mView_kcry.setText(user.getUname());
 
         //初始化图片保存路径
         String photo_dir = AbFileUtil.getImageDownloadDir(this);
@@ -432,14 +435,14 @@ public class AddProjectPhotoActivity extends AbActivity {
         project_photo.setLocationdescribe(locationdescribe);
         project_photo.setPro_id(pro_id);
         project_photo.setFlag(flag);
-        project_photo.setCreateuser(application.getUsers().getId());
+        project_photo.setCreateuser(user.getId());
         project_photo.setUrl(path);
         mProject_photo_list.add(project_photo);
     }
 
     private void saveProject() {
         String dz = mView_dz.getText().toString().trim();
-        String user_id = application.getUsers().getId();
+        String user_id = user.getId();
 
         mProject.setId(pro_id);
         mProject.setFlag(flag);

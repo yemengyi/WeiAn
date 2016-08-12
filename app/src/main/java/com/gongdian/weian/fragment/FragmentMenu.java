@@ -31,8 +31,10 @@ import com.gongdian.weian.activity.project.ShowRqActivity;
 import com.gongdian.weian.adapter.MenuListAdapter;
 import com.gongdian.weian.model.Menu;
 import com.gongdian.weian.model.MenuListResult;
+import com.gongdian.weian.model.Users;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 
 import java.util.ArrayList;
@@ -53,6 +55,7 @@ public class FragmentMenu extends Fragment {
     private AbSoapUtil mAbSoapUtil = null;
     private LinearLayout mLoginLayout = null;
     private ImageView mLoginButton = null;
+    private Users users;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,6 +63,7 @@ public class FragmentMenu extends Fragment {
 
         mActivity = this.getActivity();
         application = (MyApplication) mActivity.getApplication();
+        users = ShareUtil.getSharedUser(mActivity);
 
         View view = inflater.inflate(R.layout.pull_to_refresh_list, null);
         //获取ListView对象
@@ -175,8 +179,8 @@ public class FragmentMenu extends Fragment {
         currentPage = 1;
         // 绑定参数
         AbSoapParams params = new AbSoapParams();
-        params.put("uids", application.getUsers().getUids());
-        WebServiceUntils.call(mActivity, Constant.GetMenu, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
+        params.put("uids", users.getUids());
+        WebServiceUntils.call(mActivity, Constant.GetMenu2, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {
                 mList.clear();
@@ -203,8 +207,8 @@ public class FragmentMenu extends Fragment {
     public void loadMoreTask() {
         currentPage++;
         AbSoapParams params = new AbSoapParams();
-        params.put("uids", application.getUsers().getUids());
-        WebServiceUntils.call(mActivity, Constant.GetMenu, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
+        params.put("uids", users.getUids());
+        WebServiceUntils.call(mActivity, Constant.GetMenu2, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {
                 mList.clear();

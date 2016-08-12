@@ -23,10 +23,12 @@ import com.gongdian.weian.adapter.SpListAdapter;
 import com.gongdian.weian.model.Project2;
 import com.gongdian.weian.model.ProjectListResult2;
 import com.gongdian.weian.model.Project_jd2;
+import com.gongdian.weian.model.Users;
 import com.gongdian.weian.others.PinnedHeaderExpandableListView;
 import com.gongdian.weian.others.StickyLayout;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils2;
 
 import java.util.ArrayList;
@@ -43,12 +45,14 @@ public class ShowSpProject extends AbActivity implements
     private ArrayList<Project2> groupList = null;
     private ArrayList<List<Project_jd2>> childList =null;
     private AbPullToRefreshView mAbPullToRefreshView = null;
+    private Users user;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setAbContentView(R.layout.activity_project_sp);
         application = (MyApplication)getApplication();
+        user = ShareUtil.getSharedUser(ShowSpProject.this);
         expandableListView = (PinnedHeaderExpandableListView) findViewById(R.id.expandablelist);
         mAbPullToRefreshView = (AbPullToRefreshView)findViewById(R.id.mPullRefreshView);
 
@@ -111,7 +115,7 @@ public class ShowSpProject extends AbActivity implements
      */
     public void refreshTask() {
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id", user.getId());
         WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(ShowSpProject.this, Constant.GetProject_sp, params);
         webServiceUntils2.start(new WebServiceUntils2.webServiceCallBack() {
             @Override
@@ -145,7 +149,7 @@ public class ShowSpProject extends AbActivity implements
 
     public void loadMoreTask() {
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id", user.getId());
         WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(ShowSpProject.this, Constant.GetProject_sp, params);
         webServiceUntils2.start(new WebServiceUntils2.webServiceCallBack() {
             @Override

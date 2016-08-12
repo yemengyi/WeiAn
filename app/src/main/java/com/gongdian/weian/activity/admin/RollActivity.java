@@ -102,6 +102,11 @@ public class RollActivity extends AbActivity {
                     MenuListResult menuListResult = AbJsonUtil.fromJson(rtn, MenuListResult.class);
                     List<Menu> menuList = menuListResult.getItems();
                     if (menuList != null && menuList.size() > 0) {
+                        for (int i=0;i<menuList.size();i++) {
+                            if(menuList.get(i).getId().equals("101")){
+                                menuList.remove(i);
+                            }
+                        }
                         mList.addAll(menuList);
                         rollListAdapter.notifyDataSetChanged();
                         menuList.clear();

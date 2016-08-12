@@ -41,6 +41,7 @@ import com.gongdian.weian.utils.AppUtil;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MsgUtil;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils2;
 
 import java.io.IOException;
@@ -91,6 +92,7 @@ public class AddProjectActivity extends AbActivity {
     private String s[] = {Constant.FLAG1};
     AlertView mAlertViewExt;//窗口拓展例子
     private String xk_pid;
+    private Users user;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -111,6 +113,7 @@ public class AddProjectActivity extends AbActivity {
         });
 
         application = (MyApplication) getApplication();
+        user = ShareUtil.getSharedUser(AddProjectActivity.this);
         //初始化数据库操作实现类
         mProjectDao = new ProjectDao(AddProjectActivity.this);
         //(1)获取数据库
@@ -492,8 +495,8 @@ public class AddProjectActivity extends AbActivity {
         mProject.setKssj(kssj);
         mProject.setJssj(zzsj);
         mProject.setDz(dz);
-        mProject.setCreateuser(application.getUsers().getId());
-        mProject.setCreateusername(application.getUsers().getUname());
+        mProject.setCreateuser(user.getId());
+        mProject.setCreateusername(user.getUname());
         mProject.setProject_dw(mList_dw_choose);
         mProject.setProject_ry(mList_ry_choose);
         mProject.setDw(dw);

@@ -88,10 +88,12 @@ public class Constant {
     public final static String GetDepartMent = "get_department_json";
     public final static String getDepartmentFilter = "get_department_filter";
     public final static String GetUsers = "get_users_json";
+    public final static String GetUsers2 = "get_users2";
     public final static String GET_users_by_menu = "get_users_by_menu";
     public final static String GET_users_by_pid = "get_user_by_pid_json";
     public final static String GET_department_users = "get_department_users_json";
     public final static String GetMenu = "get_menu_json";
+    public final static String GetMenu2 = "get_menu_json2";
     public final static String GetMenuAll = "get_menu_all_json";
     public final static String Modify_department = "modify_department";
     public final static String Modify_Users = "modify_users";

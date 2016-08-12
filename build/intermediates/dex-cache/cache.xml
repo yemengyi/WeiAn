@@ -128,13 +128,6 @@
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/release/library_edf7005250bfa4f75cc53aa8592987146c94201e.jar" />
     </item>
     <item
-        jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="ee30935bfe3c1450dad069fb4fe7990eb0deaaaa">
-        <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_75cb4de6055642201ce5a9161860bff1d404b915/classes.dex" />
-    </item>
-    <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/AppMsg/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"

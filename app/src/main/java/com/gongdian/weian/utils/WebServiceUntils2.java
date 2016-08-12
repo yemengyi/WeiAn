@@ -11,7 +11,6 @@ import com.ab.soap.AbSoapParams;
 import com.ab.soap.AbSoapUtil;
 import com.ab.util.AbDialogUtil;
 import com.ab.util.AbStrUtil;
-import com.ab.util.AbToastUtil;
 import com.bigkoo.alertview.AlertView;
 import com.bigkoo.alertview.OnItemClickListener;
 import com.gongdian.weian.R;
@@ -33,7 +32,7 @@ public class WebServiceUntils2 {
         this.context = context;
         this.methodName = methodName;
         this.params = params;
-        this.params.put("token",MyApplication.getInstance().getToken());
+        this.params.put("token",ShareUtil.getToken(context));
     }
     public WebServiceUntils2(Context context, String methodName) {
         this.context = context;
@@ -72,6 +71,7 @@ public class WebServiceUntils2 {
      * 显示刷新弹出框无背景层
      */
     private  void showRefreshPanel(final webServiceCallBack webServiceCallBack) {
+
         // 显示重新刷新的框
         final AbRefreshDialogFragment mDialogFragment = AbDialogUtil
                 .showRefreshDialog(context, R.drawable.ic_action_reload, "点击重试...", AbDialogUtil.ThemeLightPanel);
@@ -136,25 +136,29 @@ public class WebServiceUntils2 {
                                   Throwable error) {
                 webServiceCallBack.callback(false, "");
                 mDialogFragment.loadFinish();
-                if (count < 3) {
-                    showRefreshPanel(webServiceCallBack);
-                    AbToastUtil.showToast(context, error.getMessage());
-                } else {
-                    AbDialogUtil.showAlertDialog(context, R.drawable.ic_action_cancel, "错误提示", "服务故障,请检查网络");
-                }
+                AbDialogUtil.showAlertDialog(context, R.drawable.ic_action_cancel, "错误提示", "服务故障,请检查网络");
+
+                //fragment加载不一定Activity还存在
+//                if (count < 3) {
+//                    showRefreshPanel(webServiceCallBack);
+//                    AbToastUtil.showToast(context, error.getMessage());
+//                } else {
+//                    AbDialogUtil.showAlertDialog(context, R.drawable.ic_action_cancel, "错误提示", "服务故障,请检查网络");
+//                }
             }
 
             @Override
             public void onFailure(int statusCode, SoapFault fault) {
                 webServiceCallBack.callback(false, "");
                 mDialogFragment.loadFinish();
-                if (count < 3) {
-                    showRefreshPanel(webServiceCallBack);
-                    AbToastUtil.showToast(context, fault.faultstring);
-                } else {
-                    AbDialogUtil.showAlertDialog(context, R.drawable.ic_action_cancel, "错误提示", "服务故障,请检查网络");
-
-                }
+                AbDialogUtil.showAlertDialog(context, R.drawable.ic_action_cancel, "错误提示", "服务故障,请检查网络");
+//                if (count < 3) {
+//                    showRefreshPanel(webServiceCallBack);
+//                    AbToastUtil.showToast(context, fault.faultstring);
+//                } else {
+//                    AbDialogUtil.showAlertDialog(context, R.drawable.ic_action_cancel, "错误提示", "服务故障,请检查网络");
+//
+//                }
             }
 
             // 开始执行前
@@ -179,6 +183,6 @@ public class WebServiceUntils2 {
 
     public void setParams(AbSoapParams params) {
         this.params = params;
-        this.params.put("token", MyApplication.getInstance().getToken());
+        this.params.put("token",ShareUtil.getToken(context));
     }
 }

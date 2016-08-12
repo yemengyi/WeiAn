@@ -26,6 +26,7 @@ import com.gongdian.weian.model.Users;
 import com.gongdian.weian.utils.AppUtil;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.pgyersdk.feedback.PgyFeedback;
 
@@ -52,7 +53,7 @@ public class FragmentProfile extends Fragment implements OnClickListener {
                              Bundle savedInstanceState) {
         mActivity = this.getActivity();
         application = (MyApplication) mActivity.getApplication();
-        user = application.getUsers();
+        user = ShareUtil.getSharedUser(mActivity);
         mAbImageLoader = new AbImageLoader(mActivity);
         if (layout == null) {
             layout = mActivity.getLayoutInflater().inflate(R.layout.fragment_profile,
@@ -104,7 +105,7 @@ public class FragmentProfile extends Fragment implements OnClickListener {
 
     private void checkLogin() {
         if (application.isLogin) {
-            user = application.getUsers();
+            user =  ShareUtil.getSharedUser(mActivity);
             if (AbStrUtil.isEmpty(user.getHeadurl())) {
                 mImageHead.setBackgroundResource(R.drawable.icon_login);
 //                mImageHead.setImageResource(R.drawable.ic_sex_male);
@@ -112,8 +113,8 @@ public class FragmentProfile extends Fragment implements OnClickListener {
                 mAbImageLoader.display(mImageHead, user.getHeadurl());
             }
 
-            tvname.setText(application.getUsers().getUname());
-            tv_accout.setText(application.getUsers().getPname());
+            tvname.setText(user.getUname());
+            tv_accout.setText(user.getPname());
         } else {
             mImageHead.setBackgroundResource(R.drawable.icon_addfriend);
             tvname.setText("未登陆");

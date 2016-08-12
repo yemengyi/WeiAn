@@ -37,6 +37,7 @@ import com.gongdian.weian.permission.MainActivity2;
 import com.gongdian.weian.utils.AppUtil;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 import com.pgyersdk.feedback.PgyFeedbackShakeManager;
 import com.pgyersdk.javabean.AppBean;
@@ -67,7 +68,7 @@ public class MainActivity extends AbActivity {
         super.onCreate(savedInstanceState);
         setAbContentView(R.layout.activity_main);
         application = (MyApplication) abApplication;
-        users = application.getUsers();
+        users = ShareUtil.getSharedUser(MainActivity.this);
         mAbTitleBar = this.getTitleBar();
         mAbTitleBar.setTitleText("欢迎您:" + users.getUname());
         mAbTitleBar.setLogo(R.drawable.title_logo);
@@ -179,9 +180,9 @@ public class MainActivity extends AbActivity {
 //            });
 //        }
         CheckPermission checkPermission = CheckPermission.newInstance(MainActivity.this);
-        if (Build.VERSION.SDK_INT >= 23 ){
-            if(!checkPermission.check(android.Manifest.permission.READ_EXTERNAL_STORAGE)||!checkPermission.check(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
-                AppUtil.start_Activity(this,MainActivity2.class);
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (!checkPermission.check(android.Manifest.permission.READ_EXTERNAL_STORAGE) || !checkPermission.check(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                AppUtil.start_Activity(this, MainActivity2.class);
             }
         }
 
@@ -320,8 +321,8 @@ public class MainActivity extends AbActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Constant.LoginResultCode && application.isLogin) {
-            users = application.getUsers();
-            mAbTitleBar.setTitleText("欢迎您:" + users.getUname());
+            users = ShareUtil.getSharedUser(MainActivity.this);
+                mAbTitleBar.setTitleText("欢迎您:" + users.getUname());
         }
 
         if (requestCode == Constant.MineProjectResultCode) {
@@ -349,8 +350,8 @@ public class MainActivity extends AbActivity {
     public void loadMenu(final int page) {
         // 绑定参数
         AbSoapParams params = new AbSoapParams();
-        params.put("uids", application.getUsers().getUids());
-        WebServiceUntils.call(MainActivity.this, Constant.GetMenu, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
+        params.put("uids",  ShareUtil.getSharedUser(MainActivity.this).getUids());
+        WebServiceUntils.call(MainActivity.this, Constant.GetMenu2, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {
                 if (aBoolean) {
@@ -374,7 +375,7 @@ public class MainActivity extends AbActivity {
 
     public void loadProject(final int page) {
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id",  ShareUtil.getSharedUser(MainActivity.this).getId());
         WebServiceUntils.call(MainActivity.this, Constant.GetProject_menu, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {

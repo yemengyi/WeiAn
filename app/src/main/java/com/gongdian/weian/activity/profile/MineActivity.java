@@ -44,6 +44,7 @@ import com.gongdian.weian.parse.UsersPrase;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MsgUtil;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 import com.gongdian.weian.utils.WebServiceUntils2;
 import com.pgyersdk.feedback.PgyFeedbackShakeManager;
@@ -105,6 +106,7 @@ public class MineActivity extends AbActivity {
         super.onCreate(savedInstanceState);
         setAbContentView(R.layout.activity_mine);
         application = (MyApplication) abApplication;
+        user =  ShareUtil.getSharedUser(MineActivity.this);
         mAbHttpUtil = AbHttpUtil.getInstance(this);
         mAbImageLoader = new AbImageLoader(this);
         mList = new ArrayList<>();
@@ -164,7 +166,7 @@ public class MineActivity extends AbActivity {
 
 
     private void initdata() {
-        user = application.getUsers();
+        user =  ShareUtil.getSharedUser(MineActivity.this);
         if (!AbStrUtil.isEmpty(user.getHeadurl())) {
             mAbImageLoader.display(img_head, user.getHeadurl());
         }else {
@@ -358,7 +360,7 @@ public class MineActivity extends AbActivity {
             @Override
             public void callback(Boolean aBoolean, String result) {
                 if (aBoolean && AbStrUtil.isEquals(result, "1")) {
-                    application.getUsers().setHeadurl(url);
+                    user.setHeadurl(url);
                     mAbImageLoader.display(img_head, url);
                     application.setUserChanged1(true);
                     application.setUserChanged2(true);
@@ -427,7 +429,7 @@ public class MineActivity extends AbActivity {
                 AbDialogUtil.removeDialog(MineActivity.this);
                 for (int i = 0; i < mList_ry.size(); i++) {
                     if (mList_ry.get(i).isChoose()) {
-                        application.setUsers(mList_ry.get(i));
+                        ShareUtil.setSharedUser(MineActivity.this,mList_ry.get(i));
                         user = mList_ry.get(i);
                         initMenu(mList_ry.get(i).getUids());
                         /**切换用户*/
@@ -470,11 +472,11 @@ public class MineActivity extends AbActivity {
                     users.setPid("--");
                     users.setUids("--");
                     users.setUrole("0");
-                    application.setUsers(users);
+                    ShareUtil.setSharedUser(MineActivity.this,users);
                     application.setIsLogin(false);
                 } else {
                     Users users = UsersPrase.parser(result).get(0);
-                    application.setUsers(users);
+                    ShareUtil.setSharedUser(MineActivity.this,users);
                     application.setIsLogin(true);
                     initMenu(users.getUids());
                 }
@@ -485,7 +487,7 @@ public class MineActivity extends AbActivity {
     private void initMenu(String uids) {
         AbSoapParams params = new AbSoapParams();
         params.put("uids", uids);
-        WebServiceUntils2 webServiceUntils = WebServiceUntils2.newInstance(MineActivity.this, Constant.GetMenu, params);
+        WebServiceUntils2 webServiceUntils = WebServiceUntils2.newInstance(MineActivity.this, Constant.GetMenu2, params);
         webServiceUntils.start(new WebServiceUntils2.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {
@@ -498,6 +500,11 @@ public class MineActivity extends AbActivity {
                         MenuListResult menuListResult = AbJsonUtil.fromJson(rtn, MenuListResult.class);
                         List<Menu> menuList = menuListResult.getItems();
                         if (menuList != null && menuList.size() > 0) {
+                            for (int i=0;i<menuList.size();i++) {
+                                if(menuList.get(i).getId().equals("101")){
+                                    menuList.remove(i);
+                                }
+                            }
                             application.setMenuList(menuList);
                             tempList.addAll(menuList);
                             menuList.clear();
@@ -519,7 +526,7 @@ public class MineActivity extends AbActivity {
         AbFileUtil.deleteFile(file);
 
         AbSoapParams params = new AbSoapParams();
-        params.put("user_id", application.getUsers().getId());
+        params.put("user_id", user.getId());
         WebServiceUntils.call(MineActivity.this, Constant.Login_out, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String result) {

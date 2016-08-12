@@ -19,6 +19,7 @@ import com.ab.soap.AbSoapListener;
 import com.ab.soap.AbSoapParams;
 import com.ab.soap.AbSoapUtil;
 import com.ab.util.AbJsonUtil;
+import com.ab.util.AbLogUtil;
 import com.ab.util.AbStrUtil;
 import com.ab.view.ioc.AbIocView;
 import com.ab.view.pullview.AbPullToRefreshView;
@@ -36,6 +37,7 @@ import com.gongdian.weian.model.UsersListResult;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MsgUtil;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils2;
 import com.pgyersdk.feedback.PgyFeedbackShakeManager;
 
@@ -68,8 +70,8 @@ public class UsersActivity extends AbActivity {
     AlertView mAlertViewExt;//窗口拓展例子
     private AlertView mAlertView;//避免创建重复View，先创建View，然后需要的时候show出来，推荐这个做法
     private int choose = -1;
-
     private View view;
+    private String pid;
 
 
 
@@ -78,13 +80,17 @@ public class UsersActivity extends AbActivity {
         super.onCreate(savedInstanceState);
         setAbContentView(R.layout.pull_to_refresh_list2);
         application = (MyApplication) abApplication;
-        users = application.getUsers();
+        users = ShareUtil.getSharedUser(UsersActivity.this);
         mabSoapUtil = AbSoapUtil.getInstance(this);
         mabSoapUtil.setTimeout(10000);
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
+        Intent intent= getIntent();
+        pid = intent.getStringExtra("pid");
+        String pname = intent.getStringExtra("pname");
+
         mAbTitleBar = this.getTitleBar();
-        mAbTitleBar.setTitleText(Constant.MENU2);
+        mAbTitleBar.setTitleText(pname+"-"+Constant.MENU2);
         mAbTitleBar.setLogo(R.drawable.title_back_n);
         mAbTitleBar.setTitleBarBackground(R.color.colorPrimaryDark);
         mAbTitleBar.setTitleTextMargin(20, 0, 0, 0);
@@ -97,6 +103,7 @@ public class UsersActivity extends AbActivity {
             }
         });
 
+        AbLogUtil.d("xxxxx",pid);
         mAbPullToRefreshView = (AbPullToRefreshView) findViewById(R.id.mPullRefreshView);
         mListView = (ListView) findViewById(R.id.mListView);
         mListView.setDividerHeight(5);
@@ -142,7 +149,7 @@ public class UsersActivity extends AbActivity {
 
 
     public void btnclick(View view) {
-        modifyDialog("add", "", "", "", "", "", "");
+        modifyDialog("add", "", "", "", "", pid, "");
     }
 
     private void modifyDialog(final String action, final String id, String uname, String uids, String pcode, final String pid, final String pname) {
@@ -242,7 +249,8 @@ public class UsersActivity extends AbActivity {
     public void refreshTask() {
         currentPage = 1;
         AbSoapParams params = new AbSoapParams();
-        WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(UsersActivity.this, Constant.GetUsers, params);
+        params.put("pid",pid);
+        WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(UsersActivity.this, Constant.GetUsers2, params);
         webServiceUntils2.start(new WebServiceUntils2.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String result1) {
@@ -270,7 +278,8 @@ public class UsersActivity extends AbActivity {
     public void loadMoreTask() {
         currentPage++;
         AbSoapParams params = new AbSoapParams();
-        WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(UsersActivity.this, Constant.GetUsers, params);
+        params.put("pid",pid);
+        WebServiceUntils2 webServiceUntils2 = WebServiceUntils2.newInstance(UsersActivity.this, Constant.GetUsers2, params);
         webServiceUntils2.start(new WebServiceUntils2.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String result1) {
@@ -300,7 +309,7 @@ public class UsersActivity extends AbActivity {
         final Users Users =  mList.get(position);
         choose = -1;
         mAlertView = new AlertView("操作菜单", null, "取消", null,
-                new String[]{"分配人员部门", "分配人员权限","修改人员信息","删除人员信息"},
+                new String[]{"分配人员权限","修改人员信息","删除人员信息"},
                 UsersActivity.this, AlertView.Style.ActionSheet, new OnItemClickListener() {
             @Override
             public void onItemClick(Object o, int position) {
@@ -311,18 +320,18 @@ public class UsersActivity extends AbActivity {
             @Override
             public void onDismiss(Object o) {
                 switch (choose) {
-                    case 0://分配人员部门
-                        init_dw(position);
-                        break;
-                    case 1://分配人员权限
+//                    case 0://分配人员部门
+//                        init_dw(position);
+//                        break;
+                    case 0://分配人员权限
                         Intent intent = new Intent();
                         intent.putExtra("user", Users);
                         intent.setClass(UsersActivity.this, RollActivity.class);
                         startActivity(intent);
                         break;
-                    case 2://修改人员信息
+                    case 1://修改人员信息
                         modifyDialog("update", Users.getId(), Users.getUname(), Users.getUids(), Users.getPcode(), Users.getPid(), Users.getPname());
-                    case 3:
+                    case 2:
                         new AlertView("请再次确认", "删除 " +  Users.getUname() + " ?" , "取消", new String[]{"确定"}, null, UsersActivity.this, AlertView.Style.Alert, new OnItemClickListener() {
                             @Override
                             public void onItemClick(Object o, int position) {

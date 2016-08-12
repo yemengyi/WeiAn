@@ -23,6 +23,7 @@ import com.gongdian.weian.parse.UsersPrase;
 import com.gongdian.weian.utils.AppUtil;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 
 public class LauncherActivity extends AbActivity {
@@ -149,9 +150,9 @@ public class LauncherActivity extends AbActivity {
                 users.setPid("1001");
                 users.setUids("320721198205050011");
                 users.setUrole("0");
-                application.setUsers(users);
+                ShareUtil.setSharedUser(LauncherActivity.this,users);
                 application.setIsLogin(true);
-                application.setToken(android_id+Constant.APPVERSION);
+                ShareUtil.setToken(LauncherActivity.this,android_id+Constant.APPVERSION);
                 Intent intent = new Intent();
                 intent.setClass(LauncherActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -179,7 +180,7 @@ public class LauncherActivity extends AbActivity {
                     users.setPid("--");
                     users.setUids("--");
                     users.setUrole("0");
-                    application.setUsers(users);
+                    ShareUtil.setSharedUser(LauncherActivity.this,users);
                     application.setIsLogin(false);
                     intent.setClass(LauncherActivity.this, RegisterActivity.class);
                     startActivity(intent);
@@ -187,9 +188,9 @@ public class LauncherActivity extends AbActivity {
                 } else {
                     Users users = UsersPrase.parser(result).get(0);
                     AbToastUtil.showToast(LauncherActivity.this, "欢迎您" + users.getUname());
-                    application.setUsers(users);
+                    ShareUtil.setSharedUser(LauncherActivity.this,users);
                     application.setIsLogin(true);
-                    application.setToken(android_id + Constant.APPVERSION);
+                    ShareUtil.setToken(LauncherActivity.this,android_id + Constant.APPVERSION);
                     AppUtil.start_Activity(LauncherActivity.this, MainActivity.class);
                     finish();
                 }

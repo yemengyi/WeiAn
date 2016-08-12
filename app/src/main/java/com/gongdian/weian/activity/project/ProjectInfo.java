@@ -27,6 +27,7 @@ import com.gongdian.weian.model.Users;
 import com.gongdian.weian.utils.Constant;
 import com.gongdian.weian.utils.MsgUtil;
 import com.gongdian.weian.utils.MyApplication;
+import com.gongdian.weian.utils.ShareUtil;
 import com.gongdian.weian.utils.WebServiceUntils;
 
 import java.io.Serializable;
@@ -58,7 +59,7 @@ public class ProjectInfo extends AbActivity {
         super.onCreate(savedInstanceState);
         setAbContentView(R.layout.activity_project_info);
         application = (MyApplication) abApplication;
-        users = application.getUsers();
+        users = ShareUtil.getSharedUser(ProjectInfo.this);
 
         mAbTitleBar = this.getTitleBar();
 
