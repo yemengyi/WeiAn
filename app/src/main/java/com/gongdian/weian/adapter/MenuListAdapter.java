@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.ab.util.AbStrUtil;
 import com.gongdian.weian.R;
 import com.gongdian.weian.model.Menu;
 
@@ -104,12 +105,20 @@ public class MenuListAdapter extends BaseAdapter {
         holder.itemsText.setText(menu.getMenu());
         int task = 0 ;
         task = menu.getTask();
-        if (task>0) {
+        String flag = menu.getFlag();
+        if (task>0 && AbStrUtil.isEquals("1",flag)) {
             holder.taskText.setVisibility(View.VISIBLE);
             holder.taskText.setText(String.valueOf(task));
         }else {
             holder.taskText.setVisibility(View.INVISIBLE);
         }
+
+        if (!AbStrUtil.isEquals("1",flag)) { //禁用
+            holder.itemsText.setTextColor(mContext.getResources().getColor(R.color.gray));
+        }else {
+            holder.itemsText.setTextColor(mContext.getResources().getColor(R.color.gray_dark));
+        }
+
 
         return convertView;
     }

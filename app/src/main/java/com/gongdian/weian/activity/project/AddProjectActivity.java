@@ -248,12 +248,14 @@ public class AddProjectActivity extends AbActivity {
                                         String dz = mList_dw_choose.get(i).getDz();
                                         String fzr = mList_dw_choose.get(i).getFzr();
                                         String fzrxm = mList_dw_choose.get(i).getFzrxm();
+                                        String xznr = mList_dw_choose.get(i).getXznr();
                                         for (int j = 0; j < mList_dw.size(); j++) {
                                             if (AbStrUtil.isEquals(mList_dw.get(j).getPid(), s)) {
                                                 mList_dw.get(j).setChoose(true);
                                                 mList_dw.get(j).setDz(dz);
                                                 mList_dw.get(j).setFzr(fzr);
                                                 mList_dw.get(j).setFzrxm(fzrxm);
+                                                mList_dw.get(j).setXznr(xznr);
                                             }
                                         }
                                     }
@@ -415,6 +417,7 @@ public class AddProjectActivity extends AbActivity {
                 project_dw.setDz((mList_dw.get(i).getDz()));
                 project_dw.setFzr((mList_dw.get(i).getFzr()));
                 project_dw.setFzrxm((mList_dw.get(i).getFzrxm()));
+                project_dw.setXznr((mList_dw.get(i).getXznr()));
                 mList_dw_choose.add(project_dw);
                 if (temp.length() > 0) {
                     temp = temp + "、" + mList_dw.get(i).getPname();
@@ -475,8 +478,10 @@ public class AddProjectActivity extends AbActivity {
                 String s = mViewHolder.dzText.getText().toString();
                 String fzr = mViewHolder.fzrText.getText().toString();
                 String fzrxm = mViewHolder.fzrxmText.getText().toString();
+                String xznr = mViewHolder.xznrText.getText().toString();
                 mList_dw_choose.get(i).setFzr(fzr);
                 mList_dw_choose.get(i).setFzrxm(fzrxm);
+                mList_dw_choose.get(i).setXznr(xznr);
                 if (!AbStrUtil.isEmpty(s)) {
                     mList_dw_choose.get(i).setDz(s);
                     if (dz.length() > 0) {
@@ -578,6 +583,10 @@ public class AddProjectActivity extends AbActivity {
             }
             if (AbStrUtil.isEmpty(mList_dw_choose.get(i).getFzr())) {
                 MsgUtil.sendMsgTop(AddProjectActivity.this, Constant.MSG_CONFIRM, "请输入 " + mList_dw_choose.get(i).getPname() + " 的负责人!");
+                return;
+            }
+            if (AbStrUtil.isEmpty(mList_dw_choose.get(i).getXznr())) {
+                MsgUtil.sendMsgTop(AddProjectActivity.this, Constant.MSG_CONFIRM, "请输入 " + mList_dw_choose.get(i).getPname() + " 的工作内容!");
                 return;
             }
         }

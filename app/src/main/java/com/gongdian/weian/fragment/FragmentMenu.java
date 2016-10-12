@@ -19,9 +19,11 @@ import com.ab.model.AbResult;
 import com.ab.soap.AbSoapParams;
 import com.ab.soap.AbSoapUtil;
 import com.ab.util.AbJsonUtil;
+import com.ab.util.AbStrUtil;
 import com.ab.view.pullview.AbPullToRefreshView;
 import com.ab.view.pullview.AbPullToRefreshView.OnFooterLoadListener;
 import com.ab.view.pullview.AbPullToRefreshView.OnHeaderRefreshListener;
+import com.bigkoo.alertview.AlertView;
 import com.gongdian.weian.R;
 import com.gongdian.weian.activity.RegisterActivity;
 import com.gongdian.weian.activity.admin.DepartmentActivity;
@@ -123,6 +125,18 @@ public class FragmentMenu extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("menu", menu);
                 intent.putExtras(bundle);
+                String flag = menu.getFlag();
+                if (!AbStrUtil.isEquals("1", flag)) {
+                    AlertView mAlertView = new AlertView("提示", "您没有该项目的操作权限!", null,
+                            new String[]{"确定"},null,
+                            mActivity, AlertView.Style.Alert, new com.bigkoo.alertview.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(Object o, int position) {
+                        }
+                    });
+                    mAlertView.show();
+                    return;
+                }
                 switch (menu.getMenu()) {
                     case Constant.MENU1: //部门
                         intent.setClass(mActivity, DepartmentActivity.class);
@@ -139,7 +153,7 @@ public class FragmentMenu extends Fragment {
                     case Constant.MENU7: //现场督察
                     case Constant.MENU8: //完工
                         intent.setClass(mActivity, ShowProjectByMenuActivity.class);
-                        mActivity.startActivityForResult(intent,Constant.ModifyProjectResultCode);
+                        mActivity.startActivityForResult(intent, Constant.ModifyProjectResultCode);
                         break;
                     case Constant.MENU9: //一览
                         intent.setClass(mActivity, ShowRqActivity.class);
@@ -180,7 +194,7 @@ public class FragmentMenu extends Fragment {
         // 绑定参数
         AbSoapParams params = new AbSoapParams();
         params.put("uids", users.getUids());
-        WebServiceUntils.call(mActivity, Constant.GetMenu2, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
+        WebServiceUntils.call(mActivity, Constant.GetMenu3, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {
                 mList.clear();
@@ -208,7 +222,7 @@ public class FragmentMenu extends Fragment {
         currentPage++;
         AbSoapParams params = new AbSoapParams();
         params.put("uids", users.getUids());
-        WebServiceUntils.call(mActivity, Constant.GetMenu2, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
+        WebServiceUntils.call(mActivity, Constant.GetMenu3, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {
                 mList.clear();
@@ -234,12 +248,12 @@ public class FragmentMenu extends Fragment {
     public void onResume() {
         super.onResume();
 //        if (application.getUserChanged1()) {
-            checkLogin();
+        checkLogin();
 //            application.setUserChanged1(false);
 //        }
     }
 
-    public void initData(List<Menu> projects){
+    public void initData(List<Menu> projects) {
         mList.clear();
         mList.addAll(projects);
         myListViewAdapter.notifyDataSetChanged();

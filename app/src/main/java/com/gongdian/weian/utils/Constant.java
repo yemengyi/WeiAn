@@ -4,12 +4,12 @@ package com.gongdian.weian.utils;
 public class Constant {
     public static final boolean DEBUG = false;
 
-    public static final String APPVERSION = "100";
+    public static final String APPVERSION = "101";
     public static final String VERSION_ERROR = "versionerror";
     public static final String IMEI_ERROR = "imeierror";
 
     //sqllite版本号,如果本地DB版本号与当前不同则删除本地db文件
-    public static final int DBVERSION = 8;
+    public static final int DBVERSION = 9;
     public static final int LoginResultCode = 0;
     public static final int AddProjectResultCode = 1;
     public static final int MineProjectResultCode = 2;
@@ -93,7 +93,8 @@ public class Constant {
     public final static String GET_users_by_pid = "get_user_by_pid_json";
     public final static String GET_department_users = "get_department_users_json";
     public final static String GetMenu = "get_menu_json";
-    public final static String GetMenu2 = "get_menu_json2";
+//    public final static String GetMenu2 = "get_menu_json2";
+    public final static String GetMenu3 = "get_menu_json3";
     public final static String GetMenuAll = "get_menu_all_json";
     public final static String Modify_department = "modify_department";
     public final static String Modify_Users = "modify_users";

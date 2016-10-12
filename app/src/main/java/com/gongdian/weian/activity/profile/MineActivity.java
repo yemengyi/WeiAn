@@ -487,7 +487,7 @@ public class MineActivity extends AbActivity {
     private void initMenu(String uids) {
         AbSoapParams params = new AbSoapParams();
         params.put("uids", uids);
-        WebServiceUntils2 webServiceUntils = WebServiceUntils2.newInstance(MineActivity.this, Constant.GetMenu2, params);
+        WebServiceUntils2 webServiceUntils = WebServiceUntils2.newInstance(MineActivity.this, Constant.GetMenu3, params);
         webServiceUntils.start(new WebServiceUntils2.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {

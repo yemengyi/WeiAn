@@ -18,6 +18,7 @@ public class Department implements Serializable {
     private boolean choose = false;
     private String fzr;
     private String fzrxm;
+    private String xznr;
 
     public void setPid(String pid) {
         this.pid = pid;
@@ -67,5 +68,13 @@ public class Department implements Serializable {
 
     public void setFzrxm(String fzrxm) {
         this.fzrxm = fzrxm;
+    }
+
+    public String getXznr() {
+        return xznr;
+    }
+
+    public void setXznr(String xznr) {
+        this.xznr = xznr;
     }
 }

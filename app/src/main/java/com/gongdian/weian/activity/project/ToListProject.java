@@ -44,6 +44,7 @@ public class ToListProject {
                             outProject.setDz(project_dws.get(j).getDz());
                             outProject.setFzr(project_dws.get(j).getFzr());
                             outProject.setFzrxm(project_dws.get(j).getFzrxm());
+                            outProject.setXznr(project_dws.get(j).getXznr());
                             outProject.setPid(project_dws.get(j).getPid());
                             outProject.setDw(project_dws.get(j).getPname());
                             outProjects.add(outProject);
@@ -54,6 +55,7 @@ public class ToListProject {
                             outProject.setDz(project_dws.get(j).getDz());
                             outProject.setFzr(project_dws.get(j).getFzr());
                             outProject.setFzrxm(project_dws.get(j).getFzrxm());
+                            outProject.setXznr(project_dws.get(j).getXznr());
                             outProject.setPid(project_dws.get(j).getPid());
                             outProject.setDw(project_dws.get(j).getPname());
                             outProjects.add(outProject);
@@ -64,6 +66,7 @@ public class ToListProject {
                             outProject.setDz(project_dws.get(j).getDz());
                             outProject.setFzr(project_dws.get(j).getFzr());
                             outProject.setFzrxm(project_dws.get(j).getFzrxm());
+                            outProject.setXznr(project_dws.get(j).getXznr());
                             outProject.setPid(project_dws.get(j).getPid());
                             outProject.setDw(project_dws.get(j).getPname());
                             outProjects.add(outProject);
@@ -74,6 +77,7 @@ public class ToListProject {
                             outProject.setDz(project_dws.get(j).getDz());
                             outProject.setFzr(project_dws.get(j).getFzr());
                             outProject.setFzrxm(project_dws.get(j).getFzrxm());
+                            outProject.setXznr(project_dws.get(j).getXznr());
                             outProject.setPid(project_dws.get(j).getPid());
                             outProject.setDw(project_dws.get(j).getPname());
                             outProjects.add(outProject);
@@ -85,6 +89,7 @@ public class ToListProject {
                             outProject.setDz(project_dws.get(j).getDz());
                             outProject.setFzr(project_dws.get(j).getFzr());
                             outProject.setFzrxm(project_dws.get(j).getFzrxm());
+                            outProject.setXznr(project_dws.get(j).getXznr());
                             outProject.setPid(project_dws.get(j).getPid());
                             outProject.setDw(project_dws.get(j).getPname());
                             outProjects.add(outProject);

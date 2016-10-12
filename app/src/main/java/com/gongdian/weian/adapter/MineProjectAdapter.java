@@ -74,6 +74,7 @@ public class MineProjectAdapter extends BaseAdapter {
             holder.dw = ((TextView) convertView.findViewById(R.id.dw));
             holder.ry = ((TextView) convertView.findViewById(R.id.ry));
             holder.xk = ((TextView) convertView.findViewById(R.id.xk));
+            holder.xznr = ((TextView) convertView.findViewById(R.id.xznr));
             holder.btn_202 = ((Button) convertView.findViewById(R.id.btn202));
             holder.btn_203 = ((Button) convertView.findViewById(R.id.btn203));
             holder.btn_204 = ((Button) convertView.findViewById(R.id.btn204));
@@ -138,6 +139,7 @@ public class MineProjectAdapter extends BaseAdapter {
         holder.dw.setText(mProject.getDw());
         holder.ry.setText(mProject.getRy());
         holder.xk.setText(mProject.getXkdw());
+        holder.xznr.setText(mProject.getXznr());
         if (!AbStrUtil.isEmpty(mProject.getFzrxm())) {
             holder.dw.setText(mProject.getDw() + " (" + mProject.getFzrxm() + ")");
         } else {
@@ -189,6 +191,7 @@ public class MineProjectAdapter extends BaseAdapter {
         TextView dw;
         TextView ry;
         TextView xk;
+        TextView xznr;
         Button btn_202;
         Button btn_203;
         Button btn_204;

@@ -314,7 +314,7 @@
                             style="@style/TxtTitleGraySmall"
                             android:layout_width="match_parent"
                             android:layout_height="55dp"
-                            android:text="开完工许可部门:" />
+                            android:text="许可部门:" />
                     </RelativeLayout>
 
                     <View

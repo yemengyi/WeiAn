@@ -28,6 +28,8 @@ public class Project_dw implements Serializable{
     public String pname;
     @Column(name = "flag")
     public String flag;
+    @Column(name = "xznr")
+    public String xznr;
     public String latitude;
     public String lontitude;
 
@@ -109,5 +111,13 @@ public class Project_dw implements Serializable{
 
     public void setFzrxm(String fzrxm) {
         this.fzrxm = fzrxm;
+    }
+
+    public String getXznr() {
+        return xznr;
+    }
+
+    public void setXznr(String xznr) {
+        this.xznr = xznr;
     }
 }

@@ -209,38 +209,10 @@
             android:textColor="@color/gray_dark"
             android:text="维修电线杆和线路,从通道为一直加载和增加电流承载能力" />
     </LinearLayout>
+
+
     <View
         android:layout_below="@+id/lay05"
-        android:layout_toRightOf="@+id/left"
-        android:layout_width="match_parent"
-        android:layout_height="1dip"
-        android:background="@drawable/list_divider" />
-
-    <LinearLayout
-        android:id="@+id/lay06"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lay05"
-        android:orientation="horizontal">
-
-        <TextView
-            style="@style/TxtTitleGraySmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dip"
-            android:text="工作地点:" />
-
-        <TextView
-            android:id="@+id/dz"
-            style="@style/TxtTitleSmall"
-            android:textColor="@color/gray_dark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dip"
-            android:text="赣榆区新城" />
-    </LinearLayout>
-    <View
-        android:layout_below="@+id/lay06"
         android:layout_toRightOf="@+id/left"
         android:layout_width="match_parent"
         android:layout_height="1dip"
@@ -251,7 +223,7 @@
         android:id="@+id/lay07"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lay06"
+        android:layout_below="@+id/lay05"
         android:orientation="horizontal">
 
         <TextView
@@ -270,8 +242,74 @@
             android:paddingTop="5dip"
             android:text="呵呵呵呵呵\呵呵" />
     </LinearLayout>
+
+
+
     <View
         android:layout_below="@+id/lay07"
+        android:layout_toRightOf="@+id/left"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@drawable/list_divider" />
+
+    <LinearLayout
+        android:id="@+id/lay06"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay07"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TxtTitleGraySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dip"
+            android:text="工作地点:" />
+
+        <TextView
+            android:id="@+id/dz"
+            style="@style/TxtTitleSmall"
+            android:textColor="@color/gray_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dip"
+            android:text="赣榆区新城" />
+    </LinearLayout>
+
+    <View
+        android:layout_below="@+id/lay06"
+        android:layout_toRightOf="@+id/left"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@drawable/list_divider" />
+
+    <LinearLayout
+        android:id="@+id/lay061"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay06"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TxtTitleGraySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dip"
+            android:text="工作内容:" />
+
+        <TextView
+            android:id="@+id/xznr"
+            style="@style/TxtTitleSmall"
+            android:textColor="@color/gray_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dip"
+            android:text="赣榆区新城" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_below="@+id/lay061"
         android:layout_toRightOf="@+id/left"
         android:layout_width="match_parent"
         android:layout_height="1dip"
@@ -282,7 +320,7 @@
         android:id="@+id/lay071"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lay07"
+        android:layout_below="@+id/lay061"
         android:orientation="horizontal">
 
         <TextView

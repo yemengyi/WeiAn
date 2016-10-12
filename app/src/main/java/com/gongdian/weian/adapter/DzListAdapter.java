@@ -79,6 +79,7 @@ public class DzListAdapter extends BaseAdapter {
             holder.fzrText = ((EditText) convertView.findViewById(R.id.fzr));
             holder.fzrxmText = ((TextView) convertView.findViewById(R.id.fzrxm));
             holder.dzText = ((EditText) convertView.findViewById(R.id.dz));
+            holder.xznrText = ((EditText) convertView.findViewById(R.id.xznr));
             //设置标记
             convertView.setTag(holder);
         } else {
@@ -89,6 +90,7 @@ public class DzListAdapter extends BaseAdapter {
         final Project_dw mProject_dw = mList.get(position);
         holder.dwText.setText(mProject_dw.getPname());
         holder.dzText.setText(mProject_dw.getDz());
+        holder.xznrText.setText(mProject_dw.getXznr());
         holder.fzrText.setText(mProject_dw.getFzr());
         holder.fzrxmText.setText(mProject_dw.getFzrxm());
 
@@ -150,16 +152,6 @@ public class DzListAdapter extends BaseAdapter {
         return convertView;
     }
 
-    /**
-     * ViewHolder类
-     */
-    public static class ViewHolder {
-        public TextView dwText;
-        public TextView fzrxmText;
-        public EditText fzrText;
-        public EditText dzText;
-    }
-
     private void initView(final List<Users> mList_ry,final ViewHolder holder){
         View mView = LayoutInflater.from(mContext).inflate(R.layout.dialog_choose2, null);
         ListView listView = (ListView) mView.findViewById(R.id.list);
@@ -188,5 +180,16 @@ public class DzListAdapter extends BaseAdapter {
         });
         mAlertViewExt.addExtView(mView);
         mAlertViewExt.show();
+    }
+
+    /**
+     * ViewHolder类
+     */
+    public static class ViewHolder {
+        public TextView dwText;
+        public TextView fzrxmText;
+        public EditText fzrText;
+        public EditText dzText;
+        public EditText xznrText;
     }
 }

@@ -56,6 +56,7 @@ public class Project implements Serializable {
     private String fzr;
     private String fzrxm;
     private String xkdw;
+    private String xznr;
 
 
     @Relations(name = "project_dw", type = "one2many", foreignKey = "pro_id", action = "query_insert_delete")
@@ -316,5 +317,13 @@ public class Project implements Serializable {
 
     public void setXkdw(String xkdw) {
         this.xkdw = xkdw;
+    }
+
+    public String getXznr() {
+        return xznr;
+    }
+
+    public void setXznr(String xznr) {
+        this.xznr = xznr;
     }
 }

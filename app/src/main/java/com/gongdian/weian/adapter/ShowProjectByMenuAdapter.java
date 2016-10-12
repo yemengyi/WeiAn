@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ab.util.AbStrUtil;
@@ -66,6 +67,9 @@ public class ShowProjectByMenuAdapter extends BaseAdapter {
             holder.dw = ((TextView) convertView.findViewById(R.id.dw));
             holder.ry = ((TextView) convertView.findViewById(R.id.ry));
             holder.xk = ((TextView) convertView.findViewById(R.id.xk));
+            holder.xznr = ((TextView) convertView.findViewById(R.id.xznr));
+            holder.lay061 = ((LinearLayout) convertView.findViewById(R.id.lay061));
+
             //设置标记
             convertView.setTag(holder);
         } else {
@@ -88,11 +92,18 @@ public class ShowProjectByMenuAdapter extends BaseAdapter {
         holder.dw.setText(mProject.getDw());
         holder.ry.setText(mProject.getRy());
         holder.xk.setText(mProject.getXkdw());
+        holder.xznr.setText(mProject.getXznr());
         if (!AbStrUtil.isEmpty(mProject.getFzrxm())) {
             holder.dw.setText(mProject.getDw() + " (" + mProject.getFzrxm() + ")");
         } else {
             holder.dw.setText(mProject.getDw() + " (" + mProject.getFzrs() + ")" );
         }
+        if (AbStrUtil.isEmpty(mProject.getXznr())) {
+            holder.lay061.setVisibility(View.GONE);
+        }else {
+            holder.lay061.setVisibility(View.VISIBLE);
+        }
+
         return convertView;
     }
 
@@ -110,5 +121,8 @@ public class ShowProjectByMenuAdapter extends BaseAdapter {
         TextView dw;
         TextView ry;
         TextView xk;
+        TextView xznr;
+        LinearLayout lay061;
+
     }
 }

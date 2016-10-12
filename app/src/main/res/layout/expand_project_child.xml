@@ -40,7 +40,7 @@
             android:background="@drawable/btn_red"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:text="勘查"
             />
         <TextView
@@ -52,7 +52,7 @@
             android:background="@drawable/btn_red"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:text="许可"/>
         <TextView
             android:id="@+id/btn204"
@@ -63,7 +63,7 @@
             android:background="@drawable/btn_red"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:text="到岗"
             android:focusable="false"/>
         <TextView
@@ -75,7 +75,7 @@
             android:background="@drawable/btn_red"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:text="督察"/>
         <TextView
             android:id="@+id/btn206"
@@ -86,7 +86,7 @@
             android:background="@drawable/btn_red"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:text="终结"/>
 
 

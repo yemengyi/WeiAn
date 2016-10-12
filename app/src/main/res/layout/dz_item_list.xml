@@ -37,14 +37,14 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
-            android:paddingLeft="80dp"
+            android:background="@drawable/txt_click"
+            android:drawableRight="@drawable/ic_action_document"
             android:gravity="left|center_vertical"
+            android:paddingLeft="80dp"
             android:textColor="@color/gray_dark"
             android:textColorHint="@color/gray_light"
-            android:textSize="16sp"
-            android:drawableRight="@drawable/ic_action_document"
-            android:background="@drawable/txt_click"
-            />
+            android:textSize="16sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
@@ -68,7 +68,6 @@
         android:textSize="16sp"
         android:visibility="gone" />
 
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1dip"
@@ -85,22 +84,57 @@
             android:layout_marginLeft="15dp"
             android:gravity="left|center_vertical"
             android:text="工作地点    :"
-            android:textColor="@color/gray_light"
-            />
+            android:textColor="@color/gray_light" />
 
         <EditText
             android:id="@+id/dz"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:paddingLeft="80dp"
+            android:drawableRight="@drawable/ic_action_brush"
             android:gravity="left|center_vertical"
+            android:inputType="textMultiLine"
+            android:minHeight="40dp"
+            android:paddingLeft="80dp"
             android:singleLine="false"
             android:textColor="@color/gray_dark"
             android:textColorHint="@color/gray_light"
-            android:textSize="16sp"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/list_divider" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="left|center_vertical"
+            android:text="工作内容    :"
+            android:textColor="@color/gray_light" />
+
+        <EditText
+            android:id="@+id/xznr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:drawableRight="@drawable/ic_action_brush"
-            />
+            android:gravity="left|center_vertical"
+            android:inputType="textMultiLine"
+            android:minHeight="40dp"
+            android:paddingLeft="80dp"
+            android:singleLine="false"
+            android:textColor="@color/gray_dark"
+            android:textColorHint="@color/gray_light"
+            android:textSize="16sp" />
+
     </RelativeLayout>
 
 </LinearLayout>

@@ -89,7 +89,7 @@
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/roundedimageview/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="9e680e55b337e7cda8ac2361afb35d9127b9a108">
+        sha1="55e8811132da58d86576f4a9dd1bc0f27dbe0891">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/release/WeiAn-roundedimageview-unspecified_4a26fb049cf452d51f2cf718a4c6e72811bf179c.jar" />
     </item>
     <item
@@ -103,7 +103,7 @@
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/AndBase/unspecified/jars/libs/ksoap2-android-assembly-2.6.5-jar-with-dependencies.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="6f6bbe8622a97b5337103302b76940c7fc54e996">
+        sha1="dae197900db0f92808331da25a589a0a430e79e7">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/release/ksoap2-android-assembly-2.6.5-jar-with-dependencies_32ce477f4f49ced7db166c03bf0fd67a173d09c7.jar" />
     </item>
     <item
@@ -131,7 +131,7 @@
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/AppMsg/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="226e03daaecd70591d428f0462d464a7f2052552">
+        sha1="de8ddca242c96db5db1bc5af8a4c07ad41bd94e5">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/release/WeiAn-AppMsg-unspecified_7a62321fbb2ff5661d213f24e27e469ea22ba65a.jar" />
     </item>
     <item
@@ -145,14 +145,14 @@
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/com.bigkoo/alertview/1.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="6b22c7854d6f2b1dbaba49b61aeead46217ceb6a">
+        sha1="dab7c991707a864cda067df2c267dfc6cfdd61fc">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/release/com.bigkoo-alertview-1.0.1_a1ec973afd82c730ba334b1da85973ec3dd09810.jar" />
     </item>
     <item
         jar="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/exploded-aar/WeiAn/AndBase/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="6447e61259cc8206e62df27e2aa2997d3aafe8e1">
+        sha1="9d67817ddf58d4ead568bcaaf1461eab566a9774">
         <dex dex="/Users/qian-pc/AndroidStudioProjects/WeiAn/app/build/intermediates/pre-dexed/release/WeiAn-AndBase-unspecified_ef688c765b00fa3bfd5a444283831853e192984b.jar" />
     </item>
     <item

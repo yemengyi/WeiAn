@@ -351,7 +351,7 @@ public class MainActivity extends AbActivity {
         // 绑定参数
         AbSoapParams params = new AbSoapParams();
         params.put("uids",  ShareUtil.getSharedUser(MainActivity.this).getUids());
-        WebServiceUntils.call(MainActivity.this, Constant.GetMenu2, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
+        WebServiceUntils.call(MainActivity.this, Constant.GetMenu3, params, 10000, false, "", new WebServiceUntils.webServiceCallBack() {
             @Override
             public void callback(Boolean aBoolean, String rtn) {
                 if (aBoolean) {
